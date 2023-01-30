@@ -4,10 +4,10 @@ body {
 h1 {
     text-align: center;
 }
-#categories-title {
+#mobile-title {
     display: none;
     text-align: left;
-    font-size: small;
+    font-size: medium;
     font-family: cursive;
     margin: 10px;
 }
