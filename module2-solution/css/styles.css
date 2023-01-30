@@ -4,6 +4,13 @@ body {
 h1 {
     text-align: center;
 }
+#categories-title {
+    display: none;
+    text-align: left;
+    font-size: small;
+    font-family: cursive;
+    margin: 10px;
+}
 .section {
     background-color: gray;
     border: 10px;
@@ -30,6 +37,10 @@ h1 {
     clear: both;
     padding: 5px;
     box-sizing: border-box;
+    max-height: 60px;
+    overflow: scroll;
+    overflow-y: scroll;
+    cursor: ns-resize;
 }
 #chicken {
     background-color: pink;
