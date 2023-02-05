@@ -24,7 +24,6 @@ h1 {
 .section-title {
     background-color: red;
     width: 100px;
-    height: 40px;
     text-align: center;
     vertical-align: middle;
     line-height: 40px;
@@ -32,6 +31,9 @@ h1 {
     border-style: solid;
     border-width: 1px;
     float: right;
+}
+.mobile {
+    font-size: xx-large
 }
 .section-body {
     clear: both;
@@ -49,6 +51,19 @@ h1 {
     color: white;
 }
 #sushi {
+    background-color: peachpuff;
+}
+#chicken-mobile {
+    display: none;
+    background-color: pink;
+}
+#beef-mobile {
+    display: none;
+    background-color: red;
+    color: white;
+}
+#sushi-mobile {
+    display: none;
     background-color: peachpuff;
 }
 
@@ -77,4 +92,44 @@ h1 {
         width: 50%;
     }
 
+}
+
+/******** Mobile *********/
+@media (max-width: 767px) {
+
+    #title {
+        display: none;
+    }
+
+    #mobile-title {
+        display: block;
+    }
+
+    .container {
+        float: left;
+    }
+
+    .section-title {
+        width: 100%;
+    }
+
+    #chicken {
+        display: none;
+    }
+    #beef {
+        display: none;
+    }
+    #sushi {
+        display: none;
+    }
+
+    #chicken-mobile {
+        display: block;
+    }
+    #beef-mobile {
+        display: block;
+    }
+    #sushi-mobile {
+        display: block;
+    }
 }
