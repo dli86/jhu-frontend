@@ -1,9 +1,11 @@
 h1 {
     text-align: center;
 }
+
 * {
     box-sizing: border-box;
 }
+
 #mobile-title {
     display: none;
     text-align: left;
@@ -11,9 +13,11 @@ h1 {
     font-family: cursive;
     margin: 10px;
 }
+
 .container {
     padding: 10px;
 }
+
 .section {
     background-color: #808080;
     border: 10px;
@@ -21,6 +25,7 @@ h1 {
     border-style: solid;
     border-width: 1px;
 }
+
 .section-title {
     width: 100px;
     text-align: center;
@@ -29,38 +34,48 @@ h1 {
     border-color: black;
     border-style: solid;
     border-width: 1px;
+    margin-bottom: 5px;
     float: right;
 }
+
 .mobile {
     font-size: 35px;
 }
+
 .section-body {
     clear: both;
     padding: 5px;
+    margin: 5px;
     max-height: 100px;
     overflow: scroll;
     overflow-y: scroll;
     cursor: ns-resize;
 }
+
 #chicken {
     background-color: #ffc0cb;
 }
+
 #beef {
     background-color: #bc0202;
     color: #ffffff;
 }
+
 #sushi {
     background-color: #ffdab9;
 }
+
 #chicken-mobile {
     display: none;
     background-color: #ffc0cb;
 }
+
 #beef-mobile {
     display: none;
     background-color: #bc0202;
     color: #ffffff;
 }
+
 #sushi-mobile {
     display: none;
     background-color: #ffdab9;
@@ -84,11 +99,11 @@ h1 {
     }
 
     .container-tablet-1 {
-        width: 100%;
+        width: 50%;
     }
 
     .container-tablet-2 {
-        width: 50%;
+        width: 100%;
     }
 
 }
@@ -115,9 +130,11 @@ h1 {
     #chicken {
         display: none;
     }
+
     #beef {
         display: none;
     }
+
     #sushi {
         display: none;
     }
@@ -125,10 +142,13 @@ h1 {
     #chicken-mobile {
         display: block;
     }
+
     #beef-mobile {
         display: block;
     }
+
     #sushi-mobile {
         display: block;
     }
+
 }
