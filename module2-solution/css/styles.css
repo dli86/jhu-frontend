@@ -11,13 +11,15 @@ h1 {
     font-family: cursive;
     margin: 10px;
 }
+.container {
+    padding: 10px;
+}
 .section {
     background-color: gray;
     border: 10px;
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    margin: 10px;
 }
 .section-title {
     background-color: red;
@@ -48,4 +50,31 @@ h1 {
 }
 #sushi {
     background-color: peachpuff;
+}
+
+/******** Desktop *********/
+@media (min-width: 992px) {
+
+    .container {
+        width: 33%;
+        float: left;
+    }
+
+}
+
+/******** Tablet *********/
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .container {
+        float: left;
+    }
+
+    .container-tablet-1 {
+        width: 100%;
+    }
+
+    .container-tablet-2 {
+        width: 50%;
+    }
+
 }
