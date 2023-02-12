@@ -9,13 +9,12 @@
   border-radius: 0px;
 }
 
-.navbar-brand h1 { /* Restaurant name */
-  font-family: 'Lora', serif;
+#navbar-heading {
   color: #000000;
   font-size: 1.5em;
+  font-weight: 500;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: .75;
 }
 
 #collapsable-nav {
@@ -37,7 +36,7 @@
 
 #menu-heading {
   font-size: 2em;
-  font-weight: 400;
+  font-weight: 500;
   padding-top: 10px;
 }
 
