@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+#header-nav {
+  border-bottom: 1px solid black;
+  margin-bottom: 0px;
+  background-color: lightgray;
+  border-radius: 0px;
+}
+
 .navbar-brand h1 { /* Restaurant name */
   font-family: 'Lora', serif;
   color: #000000;
@@ -5,10 +16,6 @@
   margin-top: 0;
   margin-bottom: 0;
   line-height: .75;
-}
-
-#header-nav {
-  border-bottom: 1px solid black;
 }
 
 #collapsable-nav {
@@ -20,8 +27,37 @@
 }
 
 #nav-list li {
-  text-align: center;
   border-bottom: 1px solid black;
+}
+
+#nav-list li a {
+  background-color: rgb(130, 244, 130);
+  color: black;
+}
+
+#menu-heading {
+  font-size: 2em;
+  font-weight: 400;
+  padding-top: 10px;
+}
+
+.menu-item-container {
+  padding-top: 10px;
+}
+
+.menu-item {
+  background-color: lightgray;
+  padding: 10px;
+}
+
+.menu-item-text {
+  height: 700px;
+}
+
+.menu-item-heading {
+  font-size: 1.5em;
+  font-weight: 400;
+  padding-bottom: 10px;
 }
 
 /******** Desktop *********/
