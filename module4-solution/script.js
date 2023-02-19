@@ -83,4 +83,32 @@ WARNING!!! WARNING!!!
     console.log(nameMessages[n]);
   }
 
+  var initialValue = {
+    hello: [],
+    bye: []
+  }
+
+  var nameReducer = function(accumulator, s) {
+    var firstLetter = s.charAt(0);
+    var firstLetterLowerCase = firstLetter.toLowerCase();
+
+    if (firstLetterLowerCase === "j") {
+      accumulator["bye"].push(byeSpeaker.simpleSpeak(s));
+    } else {
+      accumulator["hello"].push(helloSpeaker.simpleSpeak(s));
+    }
+
+    return accumulator;
+  }
+
+  var reducedValues = names.reduce(nameReducer, initialValue);
+
+  for (n = 0; n < reducedValues["hello"].length; n++) {
+    console.log(reducedValues["hello"][n]);
+  }
+
+  for (n = 0; n < reducedValues["bye"].length; n++) {
+    console.log(reducedValues["bye"][n]);
+  }
+
 })();
