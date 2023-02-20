@@ -71,9 +71,9 @@ WARNING!!! WARNING!!!
     var firstLetterLowerCase = firstLetter.toLowerCase();
 
     if (firstLetterLowerCase === "j") {
-      return byeSpeaker.simpleSpeak(s);
+      return byeSpeaker.speakSimple(s);
     } else {
-      return helloSpeaker.simpleSpeak(s);
+      return helloSpeaker.speakSimple(s);
     }
   }
 
@@ -93,9 +93,9 @@ WARNING!!! WARNING!!!
     var firstLetterLowerCase = firstLetter.toLowerCase();
 
     if (firstLetterLowerCase === "j") {
-      accumulator["bye"].push(byeSpeaker.simpleSpeak(s));
+      accumulator["bye"].push(byeSpeaker.speakSimple(s));
     } else {
-      accumulator["hello"].push(helloSpeaker.simpleSpeak(s));
+      accumulator["hello"].push(helloSpeaker.speakSimple(s));
     }
 
     return accumulator;
