@@ -66,6 +66,7 @@ WARNING!!! WARNING!!!
     }
   }
 
+  // Part 2
   var nameMapper = function(s) {
     var firstLetter = s.charAt(0);
     var firstLetterLowerCase = firstLetter.toLowerCase();
@@ -83,6 +84,7 @@ WARNING!!! WARNING!!!
     console.log(nameMessages[n]);
   }
 
+  // Part 3
   var initialValue = {
     hello: [],
     bye: []
