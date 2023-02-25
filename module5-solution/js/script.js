@@ -195,6 +195,7 @@ function buildAndShowAboutHTML() {
         aboutHtmlResponse = insertProperty(aboutHtmlResponse, "class" + String(i), "fa fa-star-o");
       }
 
+      aboutHtmlResponse = insertProperty(aboutHtmlResponse, "rating", String(rating));
       insertHtml("#main-content", aboutHtmlResponse);
     },
     false);
