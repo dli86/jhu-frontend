@@ -173,15 +173,29 @@ dc.loadAbout = function () {
   buildAndShowAboutHTML();
 };
 
+
+function randomNumberFrom1To5() {
+  return Math.floor(Math.random() * 5) + 1;
+}
+
+
 // Loads about snippet
 function buildAndShowAboutHTML() {
   // Load snippet of about page
   $ajaxUtils.sendGetRequest(
     aboutHtml,
-    function (htmlResult) {
+    function (aboutHtmlResponse) {
       switchAboutToActive();
-      var rating = Math.floor(Math.random() * 5) + 1;
-      insertHtml("#main-content", htmlResult);
+      var rating = randomNumberFrom1To5();
+      for (var i = 1; i <= rating; i++) {
+        aboutHtmlResponse = insertProperty(aboutHtmlResponse, "class" + String(i), "fa fa-star");
+      }
+
+      for (var i = rating; i <= 5; i++) {
+        aboutHtmlResponse = insertProperty(aboutHtmlResponse, "class" + String(i), "fa fa-star-o");
+      }
+
+      insertHtml("#main-content", aboutHtmlResponse);
     },
     false);
 }
