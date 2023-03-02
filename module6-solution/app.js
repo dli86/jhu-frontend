@@ -16,6 +16,7 @@
     $scope.checkIfTooMuch = function() {
       if (!$scope.items) {
         $scope.message = "Please enter data first";
+        $scope.color = "red";
         return;
       }
 
@@ -32,8 +33,10 @@
 
       if (count <= 3) {
         $scope.message = "Enjoy!";
+        $scope.color = "green";
       } else {
         $scope.message = "Too much!";
+        $scope.color = "green";
       }
     }
 
