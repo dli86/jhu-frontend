@@ -6,26 +6,25 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
-<body ng-app='LunchCheck'>
-   <div class="container" ng-controller='LunchCheckController'>
-     <h1>Lunch Checker</h1>
+  <body ng-app='LunchCheck'>
+    <div class="container" ng-controller='LunchCheckController'>
+      <h1>Lunch Checker</h1>
+      <div class="form-group">
+          <input id="lunch-menu" type="text"
+          placeholder="list comma separated dishes you usually have for lunch"
+          class="form-control"
+          ng-model="items">
+      </div>
+      <div>Note: we do not consider an empty item ", ," as an item towards the count.</div>
+      <div class="form-group">
+          <button class="btn btn-default" ng-click="checkIfTooMuch();">Check If Too Much</button>
+      </div>
+      <div class="form-group message {{color}}">
+        {{message}}
+      </div>
+    </div>
 
-         <div class="form-group">
-             <input id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control"
-             ng-model="items">
-         </div>
-         <div>We do not consider an empty item ", ," as an item towards the count.</div>
-         <div class="form-group">
-             <button class="btn btn-default" ng-click="checkIfTooMuch();">Check If Too Much</button>
-         </div>
-         <div class="form-group message {{color}}">
-           <!-- Your message can go here. -->
-           {{message}}
-         </div>
-   </div>
-   <script src="angular.min.js"></script>
-   <script src="app.js"></script>
-</body>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
