@@ -18,7 +18,7 @@ function ToBuyController(ShoppingListCheckOffService) {
   }
 }
 
-AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
+AlreadyBoughtController.$inject = ['ShoppingListCheckOffService', 'addDollarSignsFilter'];
 function AlreadyBoughtController(ShoppingListCheckOffService) {
   var alreadyBought = this;
 
