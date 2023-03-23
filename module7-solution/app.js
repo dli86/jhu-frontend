@@ -46,8 +46,9 @@ function ShoppingListCheckOffService() {
   };
 
   service.removeItem = function (itemIndex) {
+    var currentItem = itemsToBuy[itemIndex];
     itemsToBuy.splice(itemIndex, 1);
-    itemsAlreadyBought.push(itemsToBuy[itemIndex]);
+    itemsAlreadyBought.push(currentItem);
   };
 
   service.getItemsToBuy = function () {
