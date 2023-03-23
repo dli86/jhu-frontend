@@ -11,10 +11,17 @@ function ToBuyController(ShoppingListCheckOffService) {
   var toBuy = this;
 
   toBuy.items = ShoppingListCheckOffService.getItemsToBuy();
+
+  toBuy.removeItem = function(itemIndex) {
+    ShoppingListCheckOffService.removeItem(itemIndex);
+  }
 }
 
 AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
 function AlreadyBoughtController(ShoppingListCheckOffService) {
+  var alreadyBought = this;
+
+  alreadyBought.items = ShoppingListCheckOffService.getItemsAlreadyBought();
 
 }
 
@@ -28,7 +35,7 @@ function ShoppingListCheckOffService() {
     { name: "oranges", quantity: 40 },
     { name: "grapes", quantity: 50 }
   ];
-  var itemsBought = [];
+  var itemsAlreadyBought = [];
 
   service.addItem = function (itemName, quantity) {
     var item = {
@@ -40,18 +47,17 @@ function ShoppingListCheckOffService() {
 
   service.removeItem = function (itemIndex) {
     itemsToBuy.splice(itemIndex, 1);
-    itemsBought.push(itemsToBuy[itemIndex]);
+    itemsAlreadyBought.push(itemsToBuy[itemIndex]);
   };
 
   service.getItemsToBuy = function () {
     return itemsToBuy;
   };
 
-  service.getItemsBought = function () {
-    return itemsBought;
+  service.getItemsAlreadyBought = function () {
+    return itemsAlreadyBought;
   };
 
 }
 
 })();
-  
