@@ -23,27 +23,22 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
 
   alreadyBought.items = ShoppingListCheckOffService.getItemsAlreadyBought();
 
+  alreadyBought.calculateTotalPrice = function (item) {
+    return item.quantity * item.pricePerItem;
+  }
 }
 
 function ShoppingListCheckOffService() {
   var service = this;
 
   var itemsToBuy = [
-    { name: "cookies", quantity: 10 },
-    { name: "chips", quantity: 20 },
-    { name: "sprite", quantity: 30 },
-    { name: "oranges", quantity: 40 },
-    { name: "grapes", quantity: 50 }
+    { name: "cookies", quantity: 10, pricePerItem: 1 },
+    { name: "chips", quantity: 20, pricePerItem: 2 },
+    { name: "sprite", quantity: 30, pricePerItem: 3 },
+    { name: "oranges", quantity: 40, pricePerItem: 4 },
+    { name: "grapes", quantity: 50, pricePerItem: 5 }
   ];
   var itemsAlreadyBought = [];
-
-  service.addItem = function (itemName, quantity) {
-    var item = {
-      name: itemName,
-      quantity: quantity
-    };
-    itemsToBuy.push(item);
-  };
 
   service.removeItem = function (itemIndex) {
     var currentItem = itemsToBuy[itemIndex];
