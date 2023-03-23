@@ -30,7 +30,7 @@
           <h2>Already Bought:</h2>
           <ul>
             <li ng-repeat="item in alreadyBought.items">
-              Bought {{ item.quantity }} of {{ item.name }} for total price of {{ alreadyBought.calculateTotalPrice(item) }}
+              Bought {{ item.quantity }} of {{ item.name }} for total price of {{ alreadyBought.calculateTotalPrice(item) | addDollarSigns }}
             </li>
           </ul>
           <div class="emptyMessage">Nothing bought yet.</div>

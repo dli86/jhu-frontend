@@ -4,7 +4,8 @@
 angular.module('ShoppingListCheckOff', [])
 .controller('ToBuyController', ToBuyController)
 .controller('AlreadyBoughtController', AlreadyBoughtController)
-.service('ShoppingListCheckOffService', ShoppingListCheckOffService);
+.service('ShoppingListCheckOffService', ShoppingListCheckOffService)
+.filter('addDollarSigns', AddDollarSignsFilter);
 
 ToBuyController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyController(ShoppingListCheckOffService) {
@@ -53,7 +54,12 @@ function ShoppingListCheckOffService() {
   service.getItemsAlreadyBought = function () {
     return itemsAlreadyBought;
   };
+}
 
+function AddDollarSignsFilter() {
+  return function(input) {
+    return "$$$" + input;
+  }
 }
 
 })();
