@@ -29,12 +29,17 @@ function NarrowItDownController(MenuSearchService) {
   var ctrl = this;
 
   ctrl.found = [];
+  ctrl.showNothingFound = false;
 
   ctrl.search = function() {
     if (ctrl.searchTerm) {
       MenuSearchService.getMatchedMenuItems(ctrl.searchTerm).then(function(found) {
         ctrl.found = Array.from(new Set(found)); // Use a set to remove duplicates
+        ctrl.showNothingFound = ctrl.found.length === 0 ? true: false;
       });
+    } else {
+      ctrl.found = [];
+      ctrl.showNothingFound = true;
     }
   }
 

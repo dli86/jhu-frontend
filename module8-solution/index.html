@@ -21,6 +21,7 @@
 
         <div class="row">
           <found-items found="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
+          <div ng-if="ctrl.showNothingFound" class="nothingFound">Nothing found.</div>
         </div>
       </div>
 

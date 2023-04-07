@@ -53,3 +53,8 @@ input[type="text"] {
 .row {
   padding-bottom: 10px;
 }
+.nothingFound {
+  font-weight: bold;
+  color: red;
+  font-size: 1.2em;
+}
