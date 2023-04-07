@@ -29,7 +29,7 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var controller = this;
 
-  controller.found = ["asdf"];
+  controller.found = [];
 
   controller.search = function() {
     console.log("Searching");
