@@ -4,57 +4,53 @@
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
+.constant('ApiBasePath', "https://coursera-jhu-default-rtdb.firebaseio.com/")
 .directive('foundItems', FoundItems);
 
 function FoundItems() {
   var ddo = {
     templateUrl: 'foundItems.html',
     scope: {
-      found: '<found',
-      // onRemove: '&'
+      found: '<',
+      onRemove: '&'
     },
-    // controller: FoundItemsDirectiveController,
-    // controllerAs: 'foundItemsFromDDO',
-    // bindToController: true
+    controller: FoundItemsDirectiveController,
+    controllerAs: 'ctrl',
+    bindToController: true
   };
 
   return ddo;
 }
 
-function FoundItemsDirectiveController() {
-
-}
+function FoundItemsDirectiveController() {}
 
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
-  var controller = this;
+  var ctrl = this;
 
-  controller.found = [];
+  ctrl.found = [];
 
-  controller.search = function() {
-    console.log("Searching");
-    console.log(controller.searchTerm);
-    MenuSearchService.getMatchedMenuItems(controller.searchTerm).then(function(found) {
-      controller.found = Array.from(new Set(found)); // Use a set to remove duplicates
-      console.log(controller.found);
-      // console.log(controller.found["$$state"]["value"]);
-      // console.log(controller.found[0]);
-    });
+  ctrl.search = function() {
+    if (ctrl.searchTerm) {
+      MenuSearchService.getMatchedMenuItems(ctrl.searchTerm).then(function(found) {
+        ctrl.found = Array.from(new Set(found)); // Use a set to remove duplicates
+      });
+    }
   }
 
-  controller.removeItem = function (itemIndex) {
-    console.log("found is: ", controller.found);
-    // Splice the item from the found array
+  ctrl.removeItem = function(itemIndex) {
+    console.log("removing item: ", itemIndex);
+    this.found.splice(itemIndex, 1);
   };
 }
 
-MenuSearchService.$inject = ['$http'];
-function MenuSearchService($http) {
+MenuSearchService.$inject = ['$http', 'ApiBasePath'];
+function MenuSearchService($http, ApiBasePath) {
   var service = this;
 
   service.getMatchedMenuItems = function(searchTerm) {
     return $http({
-      url: "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items.json"
+      url: (ApiBasePath + "menu_items.json")
     })
     .then(
       function success(result) {
@@ -72,12 +68,10 @@ function MenuSearchService($http) {
           }
         }
 
-        // return processed items
-        console.log("sample item: ", foundItems[0]);
         return foundItems;
       },
       function error(result) {
-        console.log("Error", result);
+        console.log("Error: ", result);
       }
     );
   }
