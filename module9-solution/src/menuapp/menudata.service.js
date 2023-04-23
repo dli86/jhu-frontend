@@ -56,6 +56,7 @@
 
     service.getItemsForCategory = function(categoryShortName) {
       var deferred = $q.defer();
+      console.log("categoryShortName", categoryShortName);
   
       // Wait 2 seconds before returning
       $timeout(function () {

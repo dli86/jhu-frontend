@@ -4,7 +4,7 @@
 <!-- <div>{{ categoriesCtrl.categories }}</div> -->
 <ul>
   <li ng-repeat="category in categoriesCtrl.categories"
-      ui-sref="itemDetail({itemId: $index})">
+      ui-sref="items({categoryShortName: category.name})">
     {{ category.name }}
   </li>
 </ul>

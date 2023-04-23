@@ -30,20 +30,17 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     }
   })
 
-  // .state('itemDetail', {
-  //   url: '/item-detail/{itemId}',
-  //   templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
-  //   controller: 'ItemDetailController as itemDetail',
-  //   resolve: {
-  //     item: ['$stateParams', 'ShoppingListService',
-  //           function ($stateParams, ShoppingListService) {
-  //             return ShoppingListService.getItems()
-  //               .then(function (items) {
-  //                 return items[$stateParams.itemId];
-  //               });
-  //           }]
-  //   }
-  // });
+  .state('items', {
+    url: '/items/{categoryShortName}',
+    templateUrl: 'src/menuapp/templates/items.template.html',
+    controller: 'ItemsController as itemsCtrl',
+    resolve: {
+      items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) { 
+        // Check if this works, it is different from shoppinglist
+        return MenuDataService.getItemsForCategory($stateParams.categoryShortName)
+      }]
+    }
+  });
 }
 
 })();

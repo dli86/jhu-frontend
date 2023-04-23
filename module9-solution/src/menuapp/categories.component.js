@@ -16,5 +16,5 @@
     ctrl.categories = categories;
   }
 
-  })();
+})();
   
