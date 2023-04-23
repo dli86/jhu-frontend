@@ -4,7 +4,10 @@
 <!-- <div>{{ categoriesCtrl.categories }}</div> -->
 <ul>
   <li ng-repeat="category in categoriesCtrl.categories"
-      ui-sref="items({categoryShortName: category.name})">
+      ui-sref="items({categoryShortName: category.short_name})">
     {{ category.name }}
+    <ul ng-if="category.special_instructions!==''">
+      <li>Special Instructions: {{ category.special_instructions }}</li>
+    </ul>
   </li>
 </ul>
