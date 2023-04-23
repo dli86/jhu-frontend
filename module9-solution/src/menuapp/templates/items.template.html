@@ -3,6 +3,11 @@
 <h3>Items</h3>
 <ul>
   <li ng-repeat="item in itemsCtrl.items">
-    {{ item.name }}, {{ item.description }}
+    {{ item.name }}
+    <ul>
+      <li>Description: {{ item.description }}</li>
+      <li ng-if="item.price_large!==undefined">Price Large: {{ item.price_large }}</li>
+      <li ng-if="item.price_small!==undefined">Price Small: {{ item.price_small }}</li>
+    </ul>
   </li>
 </ul>
