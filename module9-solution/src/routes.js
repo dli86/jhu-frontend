@@ -36,7 +36,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'ItemsController as itemsCtrl',
     resolve: {
       items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) { 
-        // Check if this works, it is different from shoppinglist
         return MenuDataService.getItemsForCategory($stateParams.categoryShortName)
       }]
     }
