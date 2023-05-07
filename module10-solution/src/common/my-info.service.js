@@ -3,23 +3,18 @@
   
   angular.module('common')
   .service('MyInfoService', MyInfoService);
-  
-  
+
   function MyInfoService() {
     var service = this;
-    var myInfo = {};
   
-    service.getMyInfo = function () {
+    service.getMyInfo = function() {
       return {
-        "Name": "Bob"
+        "firstname": service.firstname,
+        "lastname": service.lastname,
+        "email": service.email,
+        "favoriteDish": service.favoriteDish
       }
-    };
-  
-  
-    service.setMyInfo = function (myInfo) {
-      self.myInfo = myInfo;
-    };
-  
+    }
   }
   
   

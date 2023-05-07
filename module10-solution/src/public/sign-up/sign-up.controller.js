@@ -7,13 +7,14 @@
   SignUpController.$inject = ['MyInfoService'];
   function SignUpController(myInfoService) {
     var $ctrl = this;
-    
+
     $ctrl.submit = function() {
-      console.log("Submitting");
-      console.log($ctrl.user.firstname);
+      myInfoService.firstname = $ctrl.user.firstname;
+      myInfoService.lastname = $ctrl.user.lastname;
+      myInfoService.email = $ctrl.user.email;
+      myInfoService.favoriteDish = $ctrl.user.favoriteDish;
     }
   }
   
-  
-  })();
+})();
   

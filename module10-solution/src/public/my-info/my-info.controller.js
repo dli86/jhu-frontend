@@ -10,6 +10,5 @@
     $ctrl.myInfo = myInfo;
   }
   
-  
-  })();
+})();
   
