@@ -1,0 +1,48 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">Sign Up</h2>
+
+  <form name='regForm' novalidate>
+    <input type="text" name="firstname" placeholder="First Name"
+      ng-model="signUpCtrl.user.firstname"
+      required
+      minlength="1">
+      <span
+        ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+        Firstname must be at least 1 character long
+      </span>
+      <br>
+
+    <input type="text" name="lastname" placeholder="Last Name"
+      ng-model="signUpCtrl.user.lastname"
+      required
+      minlength="1">
+      <span
+        ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+        Lastname must be at least 1 character long
+      </span>
+      <br>
+
+    <input type="email" name="email" placeholder="Email"
+      ng-model="signUpCtrl.user.email"
+      required>
+      <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+      <br>
+
+      <input type="text" name="favoriteDish" placeholder="Favorite Dish"
+      ng-model="signUpCtrl.user.favoriteDish"
+      required
+      minlength="1">
+      <span
+        ng-if="(regForm.favoriteDish.$error.minlength || regForm.favoriteDish.$error.required) && regForm.favoriteDish.$touched">
+        Favorite Dish must be at least 1 character long
+      </span>
+      <br>
+
+    <button
+      ng-disabled="regForm.$invalid"
+      ng-click="signUpCtrl.submit()">Submit
+    </button>
+  </form>
+</div>
