@@ -30,7 +30,15 @@
       </span>
       <br>
 
-      <input type="text" name="favoriteDish" placeholder="Favorite Dish"
+    <input type="text" name="phone" placeholder="Phone ###-###-####"
+      ng-model="signUpCtrl.user.phone"
+      pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+      <br>
+
+    <input type="text" name="favoriteDish" placeholder="Favorite Dish"
       ng-model="signUpCtrl.user.favoriteDish"
       required
       minlength="1">
@@ -44,5 +52,9 @@
       ng-disabled="regForm.$invalid"
       ng-click="signUpCtrl.submit()">Submit
     </button>
+
+    <div ng-if="signUpCtrl.submitted">
+      Your information has been saved.
+    </div>
   </form>
 </div>

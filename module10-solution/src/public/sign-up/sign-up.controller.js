@@ -12,7 +12,9 @@
       myInfoService.firstname = $ctrl.user.firstname;
       myInfoService.lastname = $ctrl.user.lastname;
       myInfoService.email = $ctrl.user.email;
+      myInfoService.phone = $ctrl.user.phone;
       myInfoService.favoriteDish = $ctrl.user.favoriteDish;
+      $ctrl.submitted = true;
     }
   }
   

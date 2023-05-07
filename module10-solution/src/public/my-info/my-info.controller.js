@@ -9,6 +9,6 @@
     var $ctrl = this;
     $ctrl.myInfo = myInfo;
   }
-  
+
 })();
   
