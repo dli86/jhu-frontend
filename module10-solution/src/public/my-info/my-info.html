@@ -14,7 +14,14 @@
       Phone: {{ myInfoCtrl.myInfo.phone }}
     </div>
     <div>
-      Favorite Dish: {{ myInfoCtrl.myInfo.favoriteDish }}
+      Favorite Dish Title: {{ myInfoCtrl.myInfo.favoriteDishDetails.name }}
+    </div>
+    <div>
+      Favorite Dish Description: {{ myInfoCtrl.myInfo.favoriteDishDetails.description }}
+    </div>
+    <div>
+      Favorite Dish Picture:
+      <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{ myInfoCtrl.myInfo.favoriteDishCategoryShortName }}/{{ myInfoCtrl.myInfo.favoriteDishDetails.short_name }}.jpg" alt="{{ myInfoCtrl.myInfo.favoriteDishDetails.name }}">
     </div>
   </div>
 

@@ -6,19 +6,18 @@
 
   function MyInfoService() {
     var service = this;
-  
+
     service.getMyInfo = function() {
       return {
         "firstname": service.firstname,
         "lastname": service.lastname,
         "email": service.email,
         "phone": service.phone,
-        "favoriteDish": service.favoriteDish
+        "favoriteDishDetails": service.favoriteDishDetails,
+        "favoriteDishCategoryShortName": service.favoriteDishCategoryShortName
       }
     }
   }
-  
-  
-  
-  })();
+
+})();
   
