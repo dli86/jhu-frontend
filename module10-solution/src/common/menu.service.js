@@ -27,6 +27,15 @@ function MenuService($http, ApiPath) {
     });
   };
 
+  service.getAllMenuItemsAlt = function () {
+    var response = $http({
+      method: "GET",
+      url: (ApiPath + "/menu_items.json")
+    });
+
+    return response;
+  };
+
 }
 
 
