@@ -21,7 +21,7 @@ function MenuService($http, ApiPath) {
     });
   };
 
-  service.getAllMenuItems = function (category) {
+  service.getAllMenuItems = function () {
     return $http.get(ApiPath + '/menu_items.json').then(function (response) {
       return response.data;
     });
