@@ -54,7 +54,7 @@
       <br>
 
     <button
-      ng-disabled="regForm.$invalid"
+      ng-disabled="regForm.$invalid || signUpCtrl.showDishDoesNotExistMessage"
       ng-click="signUpCtrl.submit()">Submit
     </button>
 
