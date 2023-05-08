@@ -8,7 +8,7 @@
       minlength="1">
       <span
         ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
-        Firstname must be at least 1 character long
+        Firstname must be at least 1 character long.
       </span>
       <br>
 
@@ -18,7 +18,7 @@
       minlength="1">
       <span
         ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
-        Lastname must be at least 1 character long
+        Lastname must be at least 1 character long.
       </span>
       <br>
 
@@ -26,7 +26,7 @@
       ng-model="signUpCtrl.user.email"
       required>
       <span ng-if="regForm.email.$invalid && regForm.email.$touched">
-        Must be a valid email address: handle@domain format
+        Must be a valid email address: handle@domain format.
       </span>
       <br>
 
@@ -41,10 +41,14 @@
     <input type="text" name="favoriteDish" placeholder="Favorite Dish"
       ng-model="signUpCtrl.user.favoriteDish"
       required
-      minlength="1">
+      minlength="1"
+      ng-blur="signUpCtrl.checkIfFavoriteDishExists()">
       <span
         ng-if="(regForm.favoriteDish.$error.minlength || regForm.favoriteDish.$error.required) && regForm.favoriteDish.$touched">
-        Favorite Dish must be at least 1 character long
+        Menu number must be at least 1 character long.
+      </span>
+      <span ng-if="signUpCtrl.showDishDoesNotExistMessage">
+        No such menu number exists.
       </span>
       <br>
 
@@ -55,9 +59,6 @@
 
     <div ng-if="signUpCtrl.submitted">
       Your information has been saved.
-    </div>
-    <div ng-if="signUpCtrl.showDishDoesNotExistMessage">
-      Favorite Dish does not exist
     </div>
   </form>
 </div>

@@ -3,12 +3,12 @@
   
   angular.module('public')
   .controller('SignUpController', SignUpController);
-  
+
   SignUpController.$inject = ['MyInfoService', 'allMenuItems'];
   function SignUpController(myInfoService, allMenuItems) {
     var $ctrl = this;
 
-    $ctrl.submit = function() {
+    $ctrl.checkIfFavoriteDishExists = function() {
       var categoryShortNames = [];
       var itemShortNames = [];
       var shortNameToDetails = {};
@@ -29,15 +29,25 @@
         $ctrl.showDishDoesNotExistMessage = false;
       }
 
+      return {
+        "shortNameToDetails": shortNameToDetails, 
+        "shortNameToCategory": shortNameToCategory
+      };
+    }
+
+    $ctrl.submit = function() {
+      var favoriteDishResults = $ctrl.checkIfFavoriteDishExists();
       myInfoService.firstname = $ctrl.user.firstname;
       myInfoService.lastname = $ctrl.user.lastname;
       myInfoService.email = $ctrl.user.email;
       myInfoService.phone = $ctrl.user.phone;
-      myInfoService.favoriteDishDetails = shortNameToDetails[$ctrl.user.favoriteDish];
-      myInfoService.favoriteDishCategoryShortName = shortNameToCategory[$ctrl.user.favoriteDish];
+      myInfoService.favoriteDishDetails = 
+        favoriteDishResults["shortNameToDetails"][$ctrl.user.favoriteDish];
+      myInfoService.favoriteDishCategoryShortName = 
+        favoriteDishResults["shortNameToCategory"][$ctrl.user.favoriteDish];
       $ctrl.submitted = true;
     }
   }
-  
+
 })();
   
