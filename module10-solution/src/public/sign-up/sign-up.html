@@ -41,6 +41,7 @@
     <input type="text" name="favoriteDish" placeholder="Favorite Dish"
       ng-model="signUpCtrl.user.favoriteDish"
       required
+      check-valid-dish
       minlength="1"
       ng-change="signUpCtrl.checkIfFavoriteDishExists()">
       <span

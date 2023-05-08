@@ -2,7 +2,21 @@
   "use strict";
   
   angular.module('public')
-  .controller('SignUpController', SignUpController);
+  .controller('SignUpController', SignUpController)
+  .directive('checkValidDish', function() {
+    return {
+      require: 'ngModel',
+      link: function(scope, elm, attrs, ctrl) {
+        ctrl.$validators.checkValidDish = function(modelValue, viewValue) {
+          // if (ctrl.checkIfFavoriteDishExists(modelValue)) {
+          //   return true;
+          // }
+
+          return true;
+        };
+      }
+    };
+  });
 
   SignUpController.$inject = ['MyInfoService', 'allMenuItems'];
   function SignUpController(myInfoService, allMenuItems) {
