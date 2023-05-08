@@ -42,7 +42,7 @@
       ng-model="signUpCtrl.user.favoriteDish"
       required
       minlength="1"
-      ng-blur="signUpCtrl.checkIfFavoriteDishExists()">
+      ng-change="signUpCtrl.checkIfFavoriteDishExists()">
       <span
         ng-if="(regForm.favoriteDish.$error.minlength || regForm.favoriteDish.$error.required) && regForm.favoriteDish.$touched">
         Menu number must be at least 1 character long.
